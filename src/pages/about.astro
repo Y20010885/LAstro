@@ -46,9 +46,9 @@ const skills = [
       {identifi.occupation}. You can reach me at {identifi.email}.
     </span>
     <ul>
-      {skills.map((skill) => (
+      {skills.map((skill, index) => (
         <li>
-          {skill.name} - {skill.level}
+          <span>{index}</span>{skill.name} - {skill.level}
         </li>
       ))}
     </ul>
