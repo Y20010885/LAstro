@@ -1,4 +1,18 @@
 ---
+const pageTitle = "About Me";
+const identifi = {
+  firstName: "Yurii",
+  lastName: "Kozlov",
+  occupation: "Software Engineer",
+  email: "yurii.kozlov@example.com",
+  hobbies: ["Coding", "Reading", "Traveling"],
+};
+const skills = [
+  { name: "JavaScript", level: "Advanced" },
+  { name: "Python", level: "Intermediate" },
+  { name: "HTML/CSS", level: "Advanced" },
+  { name: "React", level: "Intermediate" },
+];
 ---
 
 <html lang="en">
@@ -8,13 +22,14 @@
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
-    <a href="/">Back to Home</a>
-    <a href="/blog">Blog</a>
-    <h1>My Astro Site</h1>
-    <h1>About Me</h1>
+    <nav>
+      <a href="/">Back to Home</a>
+      <a href="/blog">Blog</a>
+    </nav>
+    <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
     <p>
@@ -26,5 +41,16 @@
       This site will update as I complete more of the tutorial, so keep checking
       back and see how my journey is going!
     </p>
+    <span>
+      My name is {identifi.firstName} {identifi.lastName}, and I am a
+      {identifi.occupation}. You can reach me at {identifi.email}.
+    </span>
+    <ul>
+      {skills.map((skill) => (
+        <li>
+          {skill.name} - {skill.level}
+        </li>
+      ))}
+    </ul>
   </body>
 </html>
